@@ -2,6 +2,7 @@ import { totalItems } from "../helpers/cart_helpers";
 import PropTypes from "prop-types";
 
 export default function Header({ cart }) {
+  // TODO: clickhandler to show Cart
   return (
     <div>
       <h1>shop name</h1>
@@ -21,4 +22,4 @@ export default function Header({ cart }) {
 
 Header.propTypes = {
   cart: PropTypes.array.isRequired,
-}
+};
