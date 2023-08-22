@@ -19,7 +19,7 @@ export default function Products({ products, cart, setCart }) {
 }
 
 Products.propTypes = {
-  products: PropTypes.array,
-  cart: PropTypes.object,
-  setCart: PropTypes.func,
+  products: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
 };

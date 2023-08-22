@@ -10,7 +10,8 @@ export default function ProductCard({ product, cart, setCart }) {
       getUpdatedCart(
         cart,
         e.target.getAttribute("data-product-name"),
-        parseInt(e.target.parentNode.querySelector("input").value)
+        parseInt(e.target.parentNode.querySelector("input").value),
+        parseFloat(e.target.getAttribute("data-product-price"))
       )
     );
   };
@@ -30,7 +31,11 @@ export default function ProductCard({ product, cart, setCart }) {
         max="4"
         onChange={(e) => setQuantity(e.target.value)}
       ></input>
-      <button data-product-name={product.title} onClick={handleClick}>
+      <button
+        data-product-name={product.title}
+        data-product-price={product.price}
+        onClick={handleClick}
+      >
         Add to cart
       </button>
     </div>
@@ -39,6 +44,6 @@ export default function ProductCard({ product, cart, setCart }) {
 
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
-  cart: PropTypes.object,
-  setCart: PropTypes.func,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
 };

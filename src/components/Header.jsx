@@ -20,5 +20,5 @@ export default function Header({ cart }) {
 }
 
 Header.propTypes = {
-  cart: PropTypes.object.isRequired,
+  cart: PropTypes.array.isRequired,
 }

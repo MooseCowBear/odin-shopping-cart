@@ -1,14 +1,23 @@
 export const totalItems = (cart) => {
-  return Object.values(cart).reduce((a, c) => a + c, 0);
+  return cart.reduce((acc, item) => acc + item.quantity, 0);
 };
 
-export const getUpdatedCart = (cart, newItem, quantity) => {
-  let data = { ...cart };
-  if (newItem in data) {
-    const oldQuantity = data[newItem];
-    data[newItem] = oldQuantity + quantity;
+export const getUpdatedCart = (cart, newItem, quantity, price) => {
+  let data = [...cart];
+  const index = data.findIndex((elem) => elem.productName === newItem);
+  if (index > 0) {
+    const oldQuantity = data[index].quantity;
+    data[index].quantity = oldQuantity + quantity;
+    data[index].unitPrice = price;
   } else {
-    data[newItem] = quantity;
+    data.push({
+      productName: newItem,
+      quantity: quantity,
+      unitPrice: price,
+    });
   }
-  return data;
+};
+
+export const calculatePrice = (quantity, unitPrice) => {
+  return quantity * unitPrice;
 };

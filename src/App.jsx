@@ -9,7 +9,7 @@ import { useProducts } from "./helpers/fetcher";
 
 function App() {
   const { products, error, loading } = useProducts();
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
 
   const router = createBrowserRouter([
     {
@@ -22,13 +22,14 @@ function App() {
     },
     {
       path: "/checkout",
-      element: <Checkout />,
+      element: <Checkout cart={cart} />,
     },
   ]);
 
   if (error) return <p>Something went wrong.</p>;
   if (loading) return <p>loading...</p>;
 
+  // TODO: header can't be here, has to be inside routes if want to navigate from it
   return (
     <>
       <Header cart={cart} />
