@@ -1,4 +1,7 @@
-export default function Header() {
+import { totalItems } from "../helpers/cart_helpers";
+import PropTypes from "prop-types";
+
+export default function Header({ cart }) {
   return (
     <div>
       <h1>shop name</h1>
@@ -10,7 +13,12 @@ export default function Header() {
           />
         </svg>
         <small>go to cart</small>
+        <p>items in cart: {totalItems(cart)}</p>
       </button>
     </div>
   );
+}
+
+Header.propTypes = {
+  cart: PropTypes.object.isRequired,
 }

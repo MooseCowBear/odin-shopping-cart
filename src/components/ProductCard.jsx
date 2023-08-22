@@ -1,8 +1,19 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { getUpdatedCart } from "../helpers/cart_helpers";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
+
+  const handleClick = (e) => {
+    setCart(
+      getUpdatedCart(
+        cart,
+        e.target.getAttribute("data-product-name"),
+        parseInt(e.target.parentNode.querySelector("input").value)
+      )
+    );
+  };
 
   // temp width
   return (
@@ -12,18 +23,22 @@ export default function ProductCard({ product }) {
         <h3>{product.title}</h3>
         <p>{product.price}</p>
       </div>
-      <button>Add to cart</button>
       <input
         type="number"
         value={quantity}
         min="1"
-        max="6"
+        max="4"
         onChange={(e) => setQuantity(e.target.value)}
       ></input>
+      <button data-product-name={product.title} onClick={handleClick}>
+        Add to cart
+      </button>
     </div>
   );
 }
 
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
+  cart: PropTypes.object,
+  setCart: PropTypes.func,
 };
