@@ -6,6 +6,7 @@ export default function ProductCard({ product, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleClick = (e) => {
+    console.log("cart", cart);
     setCart(
       getUpdatedCart(
         cart,

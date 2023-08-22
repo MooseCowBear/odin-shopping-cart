@@ -16,8 +16,13 @@ export const getUpdatedCart = (cart, newItem, quantity, price) => {
       unitPrice: price,
     });
   }
+  return data;
 };
 
 export const calculatePrice = (quantity, unitPrice) => {
   return quantity * unitPrice;
 };
+
+export const calculateSubtotal = (cart) => {
+  return cart.reduce((acc, item) => acc + item.quantity * item.unitPrice, 0);
+}
