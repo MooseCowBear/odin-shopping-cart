@@ -11,5 +11,5 @@ export default function Shop({ products }) {
 }
 
 Shop.propTypes = {
-  products: PropTypes.array.isRequired,
+  products: PropTypes.array,
 };

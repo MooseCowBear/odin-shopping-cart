@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 export default function ProductCard({ product }) {
-  // temp width 
+  const [quantity, setQuantity] = useState(1);
+
+  // temp width
   return (
     <div>
       <img src={product.image} alt={product.title} width="100px" />
@@ -10,11 +13,17 @@ export default function ProductCard({ product }) {
         <p>{product.price}</p>
       </div>
       <button>Add to cart</button>
-      <input type="number" value="1" min="1" max="6"></input>
+      <input
+        type="number"
+        value={quantity}
+        min="1"
+        max="6"
+        onChange={(e) => setQuantity(e.target.value)}
+      ></input>
     </div>
   );
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.object.isRequired
-}
+  product: PropTypes.object.isRequired,
+};
