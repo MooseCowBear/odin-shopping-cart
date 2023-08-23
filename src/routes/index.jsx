@@ -26,10 +26,10 @@ export default function Index({ cart, setCart }) {
         </div>
         <div className="flex flex-col items-center gap-3">
           <div className="p-5">
-            <h1 className="text-4xl font-extrabold lowercase">Welcome.</h1>
+            <h1 className="text-4xl font-extrabold lowercase">Welcome</h1>
             <p>
               to the internet&apos;s only card shop catering exclusively to
-              player&apos;s who love blue.
+              players who love blue.
             </p>
           </div>
           <NavLink
