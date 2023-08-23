@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import "./App.css";
 import Index from "./routes/index";
 import Shop from "./routes/shop";
 import Checkout from "./routes/checkout";
