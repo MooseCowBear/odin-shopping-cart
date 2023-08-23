@@ -6,6 +6,10 @@ import Address from "../components/Address";
 import Billing from "../components/Billing";
 
 export default function Checkout({ cart, setCart }) {
+  const emptyCart = () => {
+    setCart([]);
+  }
+
   return (
     <>
       <Header cart={cart} setCart={setCart} hide={false} />
@@ -24,13 +28,13 @@ export default function Checkout({ cart, setCart }) {
           >
             Continue Shopping
           </NavLink>
-          <button
+          <NavLink to="/thankyou" onClick={emptyCart}
             className={
               "uppercase tracking-widest border-2 border-sky-950 px-3 rounded hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50"
             }
           >
             Submit
-          </button>
+          </NavLink>
         </div>
       </div>
     </>

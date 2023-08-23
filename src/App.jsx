@@ -4,6 +4,7 @@ import Shop from "./routes/shop";
 import Checkout from "./routes/checkout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useProducts } from "./helpers/fetcher";
+import ThankYou from "./routes/thankyou";
 
 function App() {
   const { products, error, loading } = useProducts();
@@ -21,6 +22,10 @@ function App() {
     {
       path: "/checkout",
       element: <Checkout cart={cart} setCart={setCart} />,
+    },
+    {
+      path: "/thankyou",
+      element: <ThankYou />
     },
   ]);
 

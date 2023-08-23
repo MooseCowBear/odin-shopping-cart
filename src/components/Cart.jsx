@@ -30,7 +30,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
         hide && hide ? "hidden" : ""
       } ${
         side && side
-          ? "absolute bottom-0 right-0 translate-y-[100%] shadow-md w-clamp"
+          ? "absolute bottom-0 right-0 translate-y-[100%] shadow-md w-clamp z-10"
           : ""
       }`}
     >
