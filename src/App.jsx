@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+// import "./App.css";
 import Index from "./routes/index";
 import Shop from "./routes/shop";
 import Checkout from "./routes/checkout";
@@ -25,8 +25,9 @@ function App() {
     },
   ]);
 
-  if (error) return <p>Something went wrong.</p>;
-  if (loading) return <p>getting cards...</p>;
+  // TODO: abstract these
+  if (error) return <p className="text-center">Something went wrong.</p>;
+  if (loading) return <p className="text-center">getting cards...</p>;
 
   return (
     <RouterProvider router={router} />

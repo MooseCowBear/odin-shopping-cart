@@ -6,6 +6,7 @@ export default function Checkout({ cart, setCart }) {
   return (
     <>
       <Header cart={cart} setCart={setCart} />
+      <h1>Checkout.</h1>
       <Cart cart={cart} setCart={setCart} />
     </>
   );

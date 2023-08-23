@@ -7,7 +7,7 @@ export default function Shop({ products, cart, setCart }) {
   return (
     <>
       <Header cart={cart} setCart={setCart} />
-      <h1>shop.</h1>
+      <h1>Shop.</h1>
       <Products products={products} cart={cart} setCart={setCart} />
       <NavLink to="/checkout">Checkout</NavLink>
     </>
