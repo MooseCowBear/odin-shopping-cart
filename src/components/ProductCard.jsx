@@ -28,7 +28,7 @@ export default function ProductCard({ product, cart, setCart }) {
         type="number"
         value={quantity}
         min="1"
-        max="4"
+        max="10"
         onChange={(e) => setQuantity(e.target.value)}
       ></input>
       <button
