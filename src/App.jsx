@@ -5,6 +5,7 @@ import Checkout from "./routes/checkout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useProducts } from "./helpers/fetcher";
 import ThankYou from "./routes/thankyou";
+import Error from "./routes/error";
 
 function App() {
   const { products, error, loading } = useProducts();
@@ -14,6 +15,7 @@ function App() {
     {
       path: "/",
       element: <Index cart={cart} setCart={setCart} />,
+      errorElement: <Error />,
     },
     {
       path: "/shop",
@@ -25,7 +27,7 @@ function App() {
     },
     {
       path: "/thankyou",
-      element: <ThankYou />
+      element: <ThankYou />,
     },
   ]);
 
