@@ -16,15 +16,15 @@ export default function ProductCard({ product, cart, setCart }) {
     );
   };
 
-  // temp width
   return (
     <div>
-      <img src={product.image} alt={product.title} width="100px" />
+      <img src={product.image} alt={product.title} />
       <div>
         <h3>{product.title}</h3>
         <p>{product.price}</p>
       </div>
       <input
+        name="quantity"
         type="number"
         value={quantity}
         min="1"

@@ -26,9 +26,8 @@ function App() {
   ]);
 
   if (error) return <p>Something went wrong.</p>;
-  if (loading) return <p>loading...</p>;
+  if (loading) return <p>getting cards...</p>;
 
-  // TODO: header can't be here, has to be inside routes if want to navigate from it
   return (
     <RouterProvider router={router} />
   );

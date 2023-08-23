@@ -33,6 +33,7 @@ export default function Cart({ cart, setCart }) {
               <span>{elem.productName}</span>
               <span>${calculatePrice(elem.quantity, elem.unitPrice)}</span>
               <input
+                name="quantity"
                 type="number"
                 value={elem.quantity}
                 min="1"
