@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import Cart from "../components/Cart";
+import Header from "../components/Header";
 
 export default function Checkout({ cart, setCart }) {
-  // TODO: want to add options to update quantity, delete item
-  console.log("cart in checkout", cart);
   return (
     <>
-      <p>where the checkout will go...</p>
-      <Cart cart={cart} setCart={setCart}/>
+      <Header cart={cart} setCart={setCart} />
+      <Cart cart={cart} setCart={setCart} />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
 import Index from "./routes/index";
 import Shop from "./routes/shop";
 import Checkout from "./routes/checkout";
@@ -14,7 +13,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Index />,
+      element: <Index cart={cart} setCart={setCart} />,
     },
     {
       path: "/shop",
@@ -31,10 +30,7 @@ function App() {
 
   // TODO: header can't be here, has to be inside routes if want to navigate from it
   return (
-    <>
-      <Header cart={cart} />
-      <RouterProvider router={router} />
-    </>
+    <RouterProvider router={router} />
   );
 }
 

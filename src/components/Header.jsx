@@ -1,12 +1,22 @@
 import { totalItems } from "../helpers/cart_helpers";
 import PropTypes from "prop-types";
+import Cart from "./Cart.jsx";
+import { NavLink } from "react-router-dom";
 
-export default function Header({ cart }) {
-  // TODO: clickhandler to show Cart
+export default function Header({ cart, setCart }) {
+  // TODO: clickhandler to show Cart -- update cart to take show cart prop so can hide
+  let showCart = false;
+
+  const clickHandler = () => {
+    showCart = !showCart;
+  };
+
   return (
     <div>
-      <h1>shop name</h1>
-      <button>
+      <NavLink to="/">
+        <h1>shop name</h1>
+      </NavLink>
+      <button onClick={clickHandler}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <path
             fill=""
@@ -16,10 +26,12 @@ export default function Header({ cart }) {
         <small>go to cart</small>
         <p>items in cart: {totalItems(cart)}</p>
       </button>
+      <Cart cart={cart} setCart={setCart} />
     </div>
   );
 }
 
 Header.propTypes = {
   cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func,
 };

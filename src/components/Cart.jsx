@@ -5,18 +5,12 @@ import {
   getUpdatedCart,
 } from "../helpers/cart_helpers";
 
-export default function Cart({ cart, setCart }) {
-  // TODO: need function to update card by 1. deleting item, 2. by changing quanitity
-  const changeHandler = (e, productName, price) => {
-    console.log(
-      "productname",
-      productName,
-      "price",
-      price,
-      "new quantity",
-      parseInt(e.target.value)
-    );
+// TODO: add a bool prop to conditionally add checkout button
+// if cart is a child of header, want it to be absolutely positioned compareed to it
+// also want a "close" or "keeping shopping" button
 
+export default function Cart({ cart, setCart }) {
+  const changeHandler = (e, productName, price) => {
     setCart(
       getUpdatedCart(cart, productName, parseInt(e.target.value), price, true)
     );
@@ -26,8 +20,6 @@ export default function Cart({ cart, setCart }) {
     let data = [...cart];
     const index = data.findIndex((elem) => elem.productName === productName);
     data.splice(index, 1);
-    console.log("cart will be: ", data);
-
     setCart(data);
   };
 
