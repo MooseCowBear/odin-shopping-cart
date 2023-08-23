@@ -14,7 +14,7 @@ export const useProducts = () => {
         );
 
         if (response.status >= 400) {
-          console.log("400+ code response");
+          console.log(response.status);
           throw new Error("server error");
         }
         const data = await response.json();
@@ -37,15 +37,10 @@ const filterBlueOnly = (data) => {
 };
 
 const convertCards = (data) => {
-  /* want to take the returned data and make product objects with 
-    { title, price, image }.
-    don't really care about any other info, need to generate a price
-  */
   return data.map((card) => makeCardObject(card));
 };
 
 const makeCardObject = (card) => {
-  console.log(card.multiverseid);
   return {
     title: card.name,
     id: card.multiverseid,
