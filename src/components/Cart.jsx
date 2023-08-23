@@ -87,7 +87,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
         })}
       </ul>
       <p className="self-end">
-        subtotal: $<span>{calculateSubtotal(cart)}</span>
+        subtotal: $<span>{calculateSubtotal(cart).toFixed(2)}</span>
       </p>
       {side && (
         <NavLink

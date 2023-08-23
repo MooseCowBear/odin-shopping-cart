@@ -25,11 +25,23 @@ export default function Index({ cart, setCart }) {
           />
         </div>
         <div className="flex flex-col items-center gap-3">
-          <div className="p-5">
+          <div className="p-5 text-center">
             <h1 className="text-4xl font-extrabold lowercase">Welcome</h1>
             <p>
               to the internet&apos;s only card shop catering exclusively to
               players who love blue.
+            </p>
+            <p>
+              <q>Five stars!</q> --
+              <a
+                href="https://www.youtube.com/watch?v=OwUDLv52nrc"
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold"
+              >
+                Chris Kluwe
+              </a>
+              *
             </p>
           </div>
           <NavLink
@@ -42,6 +54,7 @@ export default function Index({ cart, setCart }) {
           </NavLink>
         </div>
       </div>
+      <p className="mt-3">* Just kiddding. Obviously.</p>
     </>
   );
 }

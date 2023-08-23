@@ -31,7 +31,6 @@ function App() {
     },
   ]);
 
-  // TODO: abstract these
   if (error) return <p className="text-center">Something went wrong.</p>;
   if (loading) return <p className="text-center">getting cards...</p>;
 

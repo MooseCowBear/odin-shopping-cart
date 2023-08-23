@@ -52,20 +52,20 @@ describe("calculateSubtotal returns correct amount", () => {
 });
 
 describe("getUpdatedCart updates cart correctly", () => {
-  it("replaces item's quantity when replace if true", () =>{
-    const cart = [{productName: "hat", quantity: 1, unitPrice: 2}]
+  it("replaces item's quantity when replace if true", () => {
+    const cart = [{ productName: "hat", quantity: 1, unitPrice: 2 }];
     const updatedCart = getUpdatedCart(cart, "hat", 2, 2, true);
     expect(updatedCart.length).toBe(1);
     expect(updatedCart[0].quantity).toBe(2);
-  })
+  });
   it("adds existing item's new quantity to the existing quantity when replace is false", () => {
     const cart = [{ productName: "hat", quantity: 1, unitPrice: 2 }];
     const updatedCart = getUpdatedCart(cart, "hat", 2, 2, false);
     expect(updatedCart.length).toBe(1);
     expect(updatedCart[0].quantity).toBe(3);
-  })
+  });
   it("adds a new item to the cart when newItem did not previously exist", () => {
-    const cart = []
+    const cart = [];
     expect(getUpdatedCart(cart, "shoe", 1, 3, false).length).toBe(1);
-  })
-})
+  });
+});
