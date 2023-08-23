@@ -2,17 +2,19 @@ import { totalItems } from "../helpers/cart_helpers";
 import PropTypes from "prop-types";
 import Cart from "./Cart.jsx";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Header({ cart, setCart }) {
   // TODO: clickhandler to show Cart -- update cart to take show cart prop so can hide
-  let showCart = false;
+  const [hideCart, setHideCart] = useState(true);
 
   const clickHandler = () => {
-    showCart = !showCart;
+    console.log("clicked");
+    setHideCart(!hideCart);
   };
 
   return (
-    <div className="flex justify-between items-end p-5 w-full">
+    <div className="flex justify-between items-end p-5 w-full relative">
       <NavLink to="/">
         <h2 className="text-6xl font-extrabold">Sure Sure Sure</h2>
       </NavLink>
@@ -35,7 +37,7 @@ export default function Header({ cart, setCart }) {
         </svg>
         <small>go to cart</small>
       </button>
-      <Cart cart={cart} setCart={setCart} />
+      <Cart cart={cart} setCart={setCart} hide={hideCart} side={true} setHide={setHideCart}/>
     </div>
   );
 }
