@@ -14,7 +14,7 @@ export default function Header({ cart, setCart }) {
   return (
     <div>
       <NavLink to="/">
-        <h1>shop name</h1>
+        <h1>Sure Sure Sure</h1>
       </NavLink>
       <button onClick={clickHandler}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

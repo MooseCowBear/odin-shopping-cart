@@ -21,7 +21,7 @@ export default function ProductCard({ product, cart, setCart }) {
       <img src={product.image} alt={product.title} />
       <div>
         <h3>{product.title}</h3>
-        <p>{product.price}</p>
+        <p>${product.price.toFixed(2)}</p>
       </div>
       <input
         name="quantity"
