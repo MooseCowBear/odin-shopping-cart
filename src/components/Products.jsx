@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 
 export default function Products({ products, cart, setCart }) {
   return (
-    <div>
+    <div className="flex flex-row flex-wrap gap-5 justify-evenly">
       {products.map((product) => {
         return (
           <ProductCard

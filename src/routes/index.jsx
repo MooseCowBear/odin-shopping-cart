@@ -35,7 +35,7 @@ export default function Index({ cart, setCart }) {
           <NavLink
             to="shop"
             className={
-              "border-sky-950 px-5 py-3 rounded-md border-2 uppercase tracking-widest hover:bg-sky-950 hover:text-gray-50"
+              "border-sky-950 px-5 py-3 rounded-md border-2 uppercase tracking-widest hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50"
             }
           >
             shop
