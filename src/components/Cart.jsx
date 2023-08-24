@@ -25,7 +25,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
   };
 
   return (
-    <div
+    <div data-testid="cart-element"
       className={`bg-gray-100 rounded p-5 flex flex-col gap-2 ${
         hide && hide ? "hidden" : ""
       } ${

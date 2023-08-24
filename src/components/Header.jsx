@@ -5,11 +5,9 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export default function Header({ cart, setCart }) {
-  // TODO: clickhandler to show Cart -- update cart to take show cart prop so can hide
   const [hideCart, setHideCart] = useState(true);
 
   const clickHandler = () => {
-    console.log("clicked");
     setHideCart(!hideCart);
   };
 
