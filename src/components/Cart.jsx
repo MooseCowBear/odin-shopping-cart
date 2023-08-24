@@ -31,7 +31,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
         hide ? "hidden" : ""
       } ${
         side
-          ? "absolute bottom-0 right-0 translate-y-[100%] shadow-md w-clamp z-10"
+          ? "absolute bottom-0 right-0 translate-x-[-3%] translate-y-[100%] shadow-md max-w-[95vw] sm:w-clamp z-10"
           : ""
       }`}
     >
@@ -53,7 +53,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
           return (
             <li
               key={index}
-              className="flex items-center justify-between gap-5 p-2 border-b-2"
+              className="flex items-center justify-between gap-5 py-2 border-b-2"
             >
               <div className="flex gap-3 items-center justify-start">
                 <span>{elem.productName}</span>
@@ -71,7 +71,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
                   onChange={(e) =>
                     changeHandler(e, elem.productName, elem.unitPrice)
                   }
-                  className="px-2 py-1 rounded"
+                  className="px-2 py-1 rounded w-[60px]"
                 ></input>
                 <button
                   onClick={() => clickHandler(elem.productName)}

@@ -33,7 +33,7 @@ export default function ProductCard({ product, cart, setCart }) {
           min="1"
           max="10"
           onChange={(e) => setQuantity(e.target.value)}
-          className="p-2 rounded"
+          className="p-2 rounded max-w-[60px]"
         ></input>
         <button
           data-product-name={product.title}

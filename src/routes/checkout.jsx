@@ -19,18 +19,18 @@ export default function Checkout({ cart, setCart }) {
         <Address title={"Shipping Address"} />
         <Address title={"Billing Address"} />
         <Billing />
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col-reverse sm:items-center sm:justify-between gap-5 sm:flex-row">
           <NavLink
             to="/shop"
             className={
-              "uppercase tracking-widest border-2 border-sky-950 px-3 rounded hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50"
+              "uppercase tracking-widest border-2 border-sky-950 px-3 rounded hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50 text-center"
             }
           >
             Continue Shopping
           </NavLink>
           <NavLink to="/thankyou" onClick={emptyCart}
             className={
-              "uppercase tracking-widest border-2 border-sky-950 px-3 rounded hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50"
+              "uppercase tracking-widest border-2 border-sky-950 px-3 rounded hover:bg-sky-950 hover:text-gray-50 focus:bg-sky-950 focus:text-gray-50 text-center"
             }
           >
             Submit
