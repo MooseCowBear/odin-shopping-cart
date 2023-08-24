@@ -5,7 +5,7 @@ export default function Billing() {
 
   const updateFormInfo = (e) => {
     let data = { ...formInfo };
-    data[e.target.name] = e.target.value;
+    data[e.target.id] = e.target.value;
     setFormInfo(data);
   };
 
@@ -13,9 +13,9 @@ export default function Billing() {
     <div className="bg-gray-100 rounded p-5 grid grid-cols-auto-fit gap-2">
       <h2 className="font-bold col-span-full">Billing Info</h2>
     <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Name:</label>
+        <label htmlFor="name" className="lowercase">Name:</label>
         <input
-          name="name"
+          id="name"
           type="text"
           value={formInfo.one}
           onChange={(e) => updateFormInfo(e)}
@@ -23,9 +23,9 @@ export default function Billing() {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Card Number:</label>
+        <label htmlFor="card" className="lowercase">Card Number:</label>
         <input
-          name="card"
+          id="card"
           type="text"
           value={formInfo.one}
           onChange={(e) => updateFormInfo(e)}
@@ -33,9 +33,9 @@ export default function Billing() {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Expiration Date:</label>
+        <label htmlFor="exp" className="lowercase">Expiration Date:</label>
         <input
-          name="exp"
+          id="exp"
           type="text"
           value={formInfo.one}
           placeholder="MM/YYYY"

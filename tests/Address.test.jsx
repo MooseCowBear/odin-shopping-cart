@@ -42,5 +42,5 @@ describe("Address component", () => {
 
     await user.type(lineOneInput, "23");
     expect(lineOneInput.value).toBe("23");
-  })
+  });
 });
