@@ -53,9 +53,9 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
           return (
             <li
               key={index}
-              className="flex items-center justify-between p-2 border-b-2"
+              className="flex items-center justify-between gap-5 p-2 border-b-2"
             >
-              <div className="flex gap-5">
+              <div className="flex gap-3 items-center justify-start">
                 <span>{elem.productName}</span>
                 <span>
                   ${calculatePrice(elem.quantity, elem.unitPrice).toFixed(2)}
