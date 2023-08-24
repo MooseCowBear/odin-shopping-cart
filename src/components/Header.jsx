@@ -21,7 +21,7 @@ export default function Header({ cart, setCart }) {
         onClick={clickHandler}
       >
         <div className="h-8 w-8 flex justify-center items-center rounded-full absolute bottom-5 left-0 bg-fuchsia-500">
-          <p className="font-bold text-gray-50">{totalItems(cart)}</p>
+          <p data-testid="count-element" className="font-bold text-gray-50">{totalItems(cart)}</p>
         </div>
         <svg
           className="h-12"

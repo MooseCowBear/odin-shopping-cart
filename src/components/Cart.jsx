@@ -25,11 +25,12 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
   };
 
   return (
-    <div data-testid="cart-element"
+    <div
+      data-testid="cart-element"
       className={`bg-gray-100 rounded p-5 flex flex-col gap-2 ${
-        hide && hide ? "hidden" : ""
+        hide ? "hidden" : ""
       } ${
-        side && side
+        side
           ? "absolute bottom-0 right-0 translate-y-[100%] shadow-md w-clamp z-10"
           : ""
       }`}
@@ -56,7 +57,9 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
             >
               <div className="flex gap-5">
                 <span>{elem.productName}</span>
-                <span>${calculatePrice(elem.quantity, elem.unitPrice)}</span>
+                <span>
+                  ${calculatePrice(elem.quantity, elem.unitPrice).toFixed(2)}
+                </span>
               </div>
               <div className="flex gap-3 items-center">
                 <input
@@ -87,7 +90,7 @@ export default function Cart({ cart, setCart, hide, side, setHide }) {
         })}
       </ul>
       <p className="self-end">
-        subtotal: $<span>{calculateSubtotal(cart).toFixed(2)}</span>
+        subtotal: ${calculateSubtotal(cart).toFixed(2)}
       </p>
       {side && (
         <NavLink

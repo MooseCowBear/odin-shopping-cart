@@ -12,7 +12,9 @@ describe("Header component", () => {
         <Header cart={[]} setCart={mockSetCart} />
       </MemoryRouter>
     );
-    expect(screen.getByRole("heading", {name: "Sure Sure Sure"})).not.toBeNull();
+    expect(
+      screen.getByRole("heading", { name: "Sure Sure Sure" })
+    ).not.toBeNull();
   });
 
   it("does not show cart by default", () => {
@@ -26,7 +28,7 @@ describe("Header component", () => {
     expect(cart.classList.contains("hidden")).toBeTruthy();
   });
 
-  it("shows cart after cart button has been clicked", async() => {
+  it("shows cart after cart button has been clicked", async () => {
     const user = userEvent.setup();
 
     const mockSetCart = vi.fn();
@@ -43,4 +45,19 @@ describe("Header component", () => {
     const cart = screen.getByTestId("cart-element");
     expect(cart.classList.contains("hidden")).toBeFalsy();
   });
+});
+
+it("displays the number of items in the cart", () => {
+  const mockSetCart = vi.fn();
+  render(
+    <MemoryRouter>
+      <Header
+        cart={[{ productName: "hat", quantity: 3, unitPrice: 2 }]}
+        setCart={mockSetCart}
+      />
+    </MemoryRouter>
+  );
+
+  const itemCount = screen.getByTestId("count-element");
+  expect(itemCount.textContent).toBe("3");
 });
