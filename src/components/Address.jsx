@@ -12,7 +12,7 @@ export default function Address({ title }) {
 
   const updateFormInfo = (e) => {
     let data = { ...formInfo };
-    data[e.target.name] = e.target.value;
+    data[e.target.id] = e.target.value;
     setFormInfo(data);
   };
 
@@ -20,9 +20,9 @@ export default function Address({ title }) {
     <div className="bg-gray-100 rounded p-5 grid grid-cols-auto-fit gap-2">
       <h2 className="font-bold col-span-full">{title}</h2>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Line 1:</label>
+        <label htmlFor="one" className="lowercase">Line 1:</label>
         <input
-          name="one"
+          id="one"
           type="text"
           value={formInfo.one}
           onChange={(e) => updateFormInfo(e)}
@@ -30,9 +30,9 @@ export default function Address({ title }) {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Line 2:</label>
+        <label htmlFor="two" className="lowercase">Line 2:</label>
         <input
-          name="two"
+          id="two"
           type="text"
           value={formInfo.two}
           onChange={(e) => updateFormInfo(e)}
@@ -40,9 +40,9 @@ export default function Address({ title }) {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">City:</label>
+        <label htmlFor="city" className="lowercase">City:</label>
         <input
-          name="city"
+          id="city"
           type="text"
           value={formInfo.city}
           onChange={(e) => updateFormInfo(e)}
@@ -50,9 +50,9 @@ export default function Address({ title }) {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">State:</label>
+        <label htmlFor="state" className="lowercase">State:</label>
         <input
-          name="state"
+          id="state"
           type="text"
           value={formInfo.state}
           onChange={(e) => updateFormInfo(e)}
@@ -60,9 +60,9 @@ export default function Address({ title }) {
         ></input>
       </div>
       <div className="flex whitespace-nowrap gap-2">
-        <label className="lowercase">Zipcode:</label>
+        <label htmlFor="zip" className="lowercase">Zipcode:</label>
         <input
-          name="zip"
+          id="zip"
           type="text"
           value={formInfo.zip}
           onChange={(e) => updateFormInfo(e)}
