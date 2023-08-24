@@ -36,7 +36,7 @@ vi.mock("../src/components/Billing", () => ({
   },
 }));
 
-describe("checkout route", () => {
+describe("checkout component", () => {
   it("renders 2 address components, a cart component, and a header component", () => {
     const mockSetCart = vi.fn();
 
