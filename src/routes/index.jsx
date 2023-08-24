@@ -54,7 +54,7 @@ export default function Index({ cart, setCart }) {
           </NavLink>
         </div>
       </div>
-      <p className="mt-3">* Just kiddding. Obviously.</p>
+      <p className="mt-3">* Just kidding. Obviously.</p>
     </>
   );
 }
